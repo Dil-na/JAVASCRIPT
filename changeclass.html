@@ -18,11 +18,31 @@
     </style>
 </head>
 <body>
+    <!-- className -->
     <div id="box" class="oldBox"></div>
     <script>
         document.getElementById('box').className ="newBox"
         let e1 = document.getElementById("box")
         console.log(e1.className);
     </script>
+
+    <!-- classList add and remove -->
+     <div id="box" class="oldBox"></div>
+    <script>
+        let e2 = document.getElementById("box")
+        e2.classList.add("newclass")
+        console.log(e2.className);
+        e2.classList.remove("oldBox")
+        console.log(e2.classname);
+    </script>
+
+    <!-- classList.toggle -->
+    <div id="box" class="oldBox"></div>
+    <script>
+        let e3 = document.getElementById("box")
+        e3.classList.toggle('newbox')
+        e3.classList.toggle('newbox')
+    </script>
+
 </body>
 </html>
