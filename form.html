@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <form action="#" class="contact-form" id="form">
+        <input type="text" class="form-input" placeholder="your name" id="name">
+        <span class="error" id="nameerror"></span>
+        <input type="text" class="form-input" placeholder="your email" id="email">
+        <span class="error" id="emailerror"></span>
+        <input type="file"
+        class="form-input" placeholder="your resume" id="file">
+        <span class="error" id="resumeerror"></span>
+        <textarea placeholder="your message" class="form-input" id="tarea"></textarea>
+        <input type="submit" value="Register" class="button submit-button" id="contact-submit">
+    </form>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function (event) {
+            var username = document.getElementById("name").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var file = document.getElementById("file");
+            var usernameError = document.getElementById("nameerror");
+            var emailError = document.getElementById("emailerror");
+            var resumeerror = document.getElementById("resumeerror");
+            usernameError.textContent ="";
+            emailError.textContent ="";
+            resumeerror.textContent ="";
+
+            var isvalid = true ;
+            //username validation
+            if (username === ""){
+                usernameError.textContent ="Must have a username";
+            isvalid = false;
+            }
+            //email validation
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (email === ""){
+                emailError.textContent ="email is required";
+                isvalid = false;
+            }else if (!emailpattern.test(email)){
+                emailError.textContent ="Invalid email format";
+                isvalid = false;
+            }
+            if(file.files.length ===0){
+                resumeerror.textContent = "must have a resume";
+                isvalid = false;
+            }
+            if(!isvalid){
+                return;
+            }
+            alert("Form submitted successfully!");
+            document.getElementById("form").reset();
+        });
+    </script>
+</body>
+</html>
