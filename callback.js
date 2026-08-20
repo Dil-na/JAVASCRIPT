@@ -17,3 +17,31 @@ function greet(){
     console.log("good morning");
 }
 mrng(greet)
+
+//callback hell
+
+function step1(callback){
+    setTimeout(()=>{
+        console.log("step1 called");
+        callback()
+    },1000)
+}
+function step2(callback){
+    setTimeout(()=>{
+        console.log("step2 called");
+        callback()
+    },1000)
+}
+function step3(callback){
+    setTimeout(()=>{
+        console.log("step3 called");
+        callback()
+    },1000)
+}
+step1(()=>{
+    step2(()=>{
+        step3(()=>{
+            console.log("All steps are completed");
+        })
+    })
+})
